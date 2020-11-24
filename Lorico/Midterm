@@ -1,1 +1,116 @@
-Midterm
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Midterm {
+	public static void main(String[] args) {
+		ArrayList<String> name = new ArrayList<String>();
+		ArrayList<Integer> age = new ArrayList<Integer>();
+		Scanner input = new Scanner(System.in);
+
+		boolean repeat = true;
+		while (repeat) {
+			System.out.println(
+				"* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *" +
+				"\n*                                                         *" +
+				"\n*                ••••••••••••••••••••••••                 *" +
+				"\n*               |         OPTIONS        |                *" +
+				"\n*                ••••••••••••••••••••••••                 *" +
+				"\n*                                                         *" +
+				"\n*                  1. Add Entry                           *" +
+				"\n*                  2. Delete Entry                        *" +
+				"\n*                  3. View All Entries                    *" +
+				"\n*                  4. Update an Entry                     *" +
+				"\n*                  0. Exit                                *" +
+				"\n*                                                         *" +
+				"\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
+
+			System.out.print("Enter choice: ");
+			int choice = input.nextInt();
+			System.out.print("___________________________________________________________");
+			switch (choice) {
+			case 0:
+				System.exit(0);
+				break;
+
+			case 1:
+				System.out.println();
+				System.out.println(
+				"\n                 ••••••••••••••••••••••••••               " +
+				"\n                |       ADDING ENTRY       |         "+
+				"\n                 ••••••••••••••••••••••••••               ");
+				System.out.print("\nEnter Name: ");
+				String addName = input.next();
+				name.add(addName);
+				System.out.print("Enter Age: ");
+				int addAge = input.nextInt();
+				age.add(addAge);
+				System.out.println(	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••" +
+"\n                 Entry added successfully.                 " +	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••");
+				System.out.println();
+				break;
+
+			case 2:
+				System.out.println();
+				System.out.println(
+				"\n                •••••••••••••••••••••••••••               " +
+				"\n               |       DELETING ENTRY      |         "+
+				"\n                •••••••••••••••••••••••••••               ");
+				System.out.print("\nEnter Name to Delete: ");
+				String deleteName = input.next();
+
+				if (name.contains(deleteName))
+					for (int i = 0; i < name.size(); i++) {
+						if (deleteName.equals(name.get(i))) {
+							System.out.print(	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••" +"\n                  "+	deleteName +" has been deleted.                 " +		"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••");
+							name.remove(i);
+							age.remove(i);
+
+						}
+						System.out.println();
+					} else {
+					System.out.println(	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••" +
+"                  No " + deleteName + " in the list.                 " +	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••");
+				}
+				System.out.println();
+				break;
+
+			case 3:
+				System.out.println();
+				System.out.println(
+				"\n                ••••••••••••••••••••••••••               " +
+				"\n               |     VIEWING ALL ENTRY    |         "+
+				"\n                ••••••••••••••••••••••••••               ");
+				for (int i = 0; i < name.size(); i++) {
+					System.out.println((i + 1) + ". " + name.get(i) + " is " + age.get(i));
+				}
+				System.out.println();
+				break;
+
+			case 4:
+				System.out.println();
+				System.out.println(
+					"\n                 •••••••••••••••••••••••••               " +
+				"\n                |      UPDATING ENTRY     |         "+
+				"\n                 •••••••••••••••••••••••••               ");
+				System.out.print("\nEnter Entry to Update: ");
+				int update =  input.nextInt();
+				System.out.print("Enter New Name: ");
+				String updateName = input.next();
+				name.set((update - 1), updateName);
+				System.out.print("Enter New Age: ");
+				int updateAge =  input.nextInt();
+				age.set((update - 1), updateAge);
+				System.out.println(
+"\n••••••••••••••••••••••••••••••••••••••••••••••••••••••••••" +
+"                 Entry updated successfully.               " +
+"\n••••••••••••••••••••••••••••••••••••••••••••••••••••••••••");
+				System.out.println();
+				break;
+
+			default:
+				System.out.println("\nInvalid choice. Try again.");
+			}
+			System.out.println("-----------------------------------------------------------" + "\n");
+ 		}
+	}
+}
