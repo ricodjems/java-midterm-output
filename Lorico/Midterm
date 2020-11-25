@@ -61,12 +61,11 @@ public class Midterm {
 				if (name.contains(deleteName))
 					for (int i = 0; i < name.size(); i++) {
 						if (deleteName.equals(name.get(i))) {
-							System.out.print(	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••" +"\n                  "+	deleteName +" has been deleted.                 " +		"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••");
+							System.out.println(	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••" +"\n                  "+	deleteName +" has been deleted.                 " +		"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••");
 							name.remove(i);
 							age.remove(i);
 
 						}
-						System.out.println();
 					} else {
 					System.out.println(	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••" +
 "                  No " + deleteName + " in the list.                 " +	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••");
@@ -82,7 +81,10 @@ public class Midterm {
 				"\n                ••••••••••••••••••••••••••               ");
 				for (int i = 0; i < name.size(); i++) {
 					System.out.println((i + 1) + ". " + name.get(i) + " is " + age.get(i));
+			
 				}
+					System.out.println(	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••" +
+"                " + name.size() + " entries found in the list.        " +	"\n•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••");
 				System.out.println();
 				break;
 
