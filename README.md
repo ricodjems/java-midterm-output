@@ -1,2 +1,2 @@
 # java-midterm-output
-ArrayList Entry
+BSCS 2 - B
